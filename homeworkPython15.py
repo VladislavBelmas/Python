@@ -1,8 +1,8 @@
 text_list = ["Hello", "Python Programming", "World", "Advanced Topics", "Simple"]
 
-for i, text in enumerate(text_list):
-    if " " in text.strip():
-        text_list.remove(text)
+for i in range(len(text_list) - 1, -1, -1):
+    if " " in text_list[i].strip():
+        text_list.pop(i)
     text_list[i] = text_list[i].lower()
 
 print(text_list)

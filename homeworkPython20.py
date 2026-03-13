@@ -27,7 +27,7 @@ def filter_numbers(num_type, *args):
                 result.append(num)
 
         else:
-            if num % 3 == 0:
+            if num % 2:
                 result.append(num)
 
     return result

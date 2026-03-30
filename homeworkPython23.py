@@ -11,11 +11,7 @@ def to_str(lst: list[Any]) -> str:
     :return: string format of data
     '''
 
-    result = ''
-    for item in lst:
-         result += f'{item} | '
-
-    return result.rstrip('| ')
+    return ' | '.join(str(item) for item in lst)
 
 
 print(to_str(data))

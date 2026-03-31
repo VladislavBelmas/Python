@@ -3,6 +3,15 @@ divider = "5a"
 
 
 def divide (div1:str|int|float , div2:str|int|float) -> str|float:
+    """
+    Returns the result of dividing two numbers or an error.
+
+
+    :param div1: dividend (what we divide)
+    :param div2: divider (what do we divide into)
+    :return: division result
+    """
+
     import logging
     logging.basicConfig(filename='errors.log', level=logging.ERROR, format="%(asctime)s) - %(levelname)s - "
                                                      "%(filename)s - %(lineno)s - %(message)s")

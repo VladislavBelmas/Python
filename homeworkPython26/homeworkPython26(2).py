@@ -8,7 +8,7 @@ if len(sys.argv) != 3:
 
 path = sys.argv[1]
 file_type = sys.argv[2]
-result = [f'Files with type "{file_type}":']
+result = []
 
 
 if not os.path.exists(path):
@@ -22,22 +22,26 @@ for root, _, files in os.walk(path):
         if file.endswith(file_type):
             result.append(os.path.join(root,file))
 
-print('\n- '.join(result))
+
+print(f'Files with type "{file_type}":')
 
 
-if not result[1:]:
+if not result:
     print("Not found")
     sys.exit(1)
 
 
-action = input("Wanna delete? (y/n): ")
+for file in result:
+    print(f'- {file}')
+
+
+action = input("Wanna delete? (y/n): ").strip().lower()
 
 
 if action in ('y', 'yes'):
-    for file in result[1:]:
+    for file in result:
        os.remove(file)
-    else:
-        print("Deleted")
+    print("Deleted")
 
 else:
-    print("Script end's")
+    print("Script ends")

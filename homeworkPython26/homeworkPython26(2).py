@@ -2,7 +2,7 @@ import os
 import sys
 
 if len(sys.argv) != 3:
-    print('Expected only 3 arguments (script name, "path", file type)')
+    print('Usage: script.py <path> <extension>')
     sys.exit(1)
 
 
@@ -16,12 +16,10 @@ if not os.path.exists(path):
     sys.exit(1)
 
 
-os.chdir(path)
 
-
-for root, dirs, files in os.walk(path):
+for root, _, files in os.walk(path):
     for file in files:
-        if os.path.basename(file).endswith(file_type):
+        if file.endswith(file_type):
             result.append(os.path.join(root,file))
 
 print('\n- '.join(result))
@@ -37,7 +35,7 @@ action = input("Wanna delete? (y/n): ")
 
 if action in ('y', 'yes'):
     for file in result[1:]:
-       os.remove(os.path.abspath(file))
+       os.remove(file)
     else:
         print("Deleted")
 

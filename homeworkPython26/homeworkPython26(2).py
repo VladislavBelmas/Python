@@ -5,9 +5,11 @@ if len(sys.argv) != 3:
     print('Expected only 3 arguments (script name, "path", file type)')
     sys.exit(1)
 
+
 path = sys.argv[1]
 file_type = sys.argv[2]
 result = [f'Files with type "{file_type}":']
+
 
 if not os.path.exists(path):
     print('Enter correct path')

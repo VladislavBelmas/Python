@@ -5,6 +5,7 @@ if len(sys.argv) != 2:
     print("Enter only 1 argument")
     sys.exit(1)
 
+
 path = sys.argv[1]
 folders = ['Folders:']
 files = ['Files:']

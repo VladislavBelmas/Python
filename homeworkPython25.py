@@ -33,6 +33,10 @@ print(divide(dividend, divider))
 
 
 
+def divide2 (div1:str|int|float , div2:str|int|float) -> str|float:
+    """
+    Returns the result of dividing two numbers or an error.
+
 
     :param div1: dividend (what we divide)
     :param div2: divider (what do we divide into)

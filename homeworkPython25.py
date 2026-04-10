@@ -19,14 +19,16 @@ def divide (div1:str|int|float , div2:str|int|float) -> float:
     if not div1.isnumeric() or not div2.isnumeric():
 
         excep = "Ошибка: Введено некорректное число."
+        logging.error(excep)
         raise ValueError(excep)
-        logging.error(excp)
+
 
     if int(div2) == 0:
 
         excep = "Ошибка: Нельзя делить на ноль."
+        logging.error(excep)
         raise ZeroDivisionError(excep)
-        logging.error(excp)
+
 
     result = int(div1) / int(div2)
     return result

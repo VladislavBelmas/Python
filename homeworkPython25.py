@@ -2,7 +2,7 @@ dividend = "345"
 divider = "5a"
 
 
-def divide (div1:str|int|float , div2:str|int|float) -> str|float:
+def divide (div1:str|int|float , div2:str|int|float) -> float:
     """
     Returns the result of dividing two numbers or an error.
 

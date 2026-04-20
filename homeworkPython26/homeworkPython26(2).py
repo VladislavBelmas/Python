@@ -2,7 +2,7 @@ import os
 import sys
 
 if len(sys.argv) != 3:
-    print('Usage: script.py <path> <extension>')
+    print('Usage: homeworkPython27(2).py <path> <extension>')
     sys.exit(1)
 
 

@@ -1,3 +1,5 @@
+import itertools
+
 weekly_schedule = {
 
     "Monday": ["Gym", "Work", "Read book"],
@@ -10,14 +12,13 @@ weekly_schedule = {
 
     "Friday": ["Work", "Dinner with friends"],
 
-    "Saturday": ["Hiking", "Rest"],
+    "Saturday": ["Hiking", "Day off"],
 
-    "Sunday": ["Family time", "Rest"]
+    "Sunday": ["Family time", "Day off"]
 
 }
 
-iterator = iter(weekly_schedule)
-
+iterators = itertools.cycle(weekly_schedule)
 
 while True:
     user_input = input("Нажмите 'Enter' для получения плана: ")
@@ -25,13 +26,7 @@ while True:
         print("Завершение программы")
         break
 
-    try:
-        day = next(iterator)
-
-    except StopIteration:
-        iterator = iter(weekly_schedule)
-        day = next(iterator)
-
+    day = next(iterators)
     print(f"{day}: {', '.join(weekly_schedule[day])}")
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -42,7 +37,8 @@ dairy = ["Milk", "Cheese", "Yogurt"]
 
 
 def all_products(*args):
-    return (y.lower() for x in args for y in x)
+    merged = itertools.chain(*args)
+    return (x.lower() for x in merged)
 
 for item in all_products(fruits, vegetables, dairy):
     print(item)
@@ -55,7 +51,7 @@ sizes = ["S", "M", "L"]
 
 
 def combinations(cloth, color, size):
-    import itertools
+
 
     result = (f"{c} - {col} - {s}" for c, col, s in itertools.product(cloth, color, size))
     return result

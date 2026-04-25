@@ -1,7 +1,6 @@
 import json
 from datetime import datetime
 from collections import defaultdict
-
 students_per_course = defaultdict(int)
 total_students = 0
 ages = []

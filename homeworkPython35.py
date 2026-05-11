@@ -12,9 +12,9 @@ class User:
         User.total_users += 1
 
 
-    @staticmethod
-    def get_total():
-        return User.total_users
+    @classmethod
+    def get_total(cls):
+        return cls.total_users
 
 
     def __str__(self):

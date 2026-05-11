@@ -10,7 +10,8 @@ class Person:
 class Student(Person):
     def __init__(self, name, course_num):
         super().__init__(name)
-        self.course_num = course_num
+        self.course_num = int(course_num)
+
 
     def introduce(self):
         super().introduce()
